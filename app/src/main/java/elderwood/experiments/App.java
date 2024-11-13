@@ -7,6 +7,7 @@ package elderwood.experiments;
 import elderwood.experiments.handler.BlockHandlerRegistry;
 import elderwood.experiments.handler.EventHandlerRegistry;
 import elderwood.experiments.monitoring.BasicResourceMonitor;
+// import elderwood.experiments.world.AnvilEntityLoader;
 import lombok.extern.slf4j.Slf4j;
 import net.minestom.server.MinecraftServer;
 import net.minestom.server.coordinate.Pos;
@@ -21,9 +22,14 @@ import net.minestom.server.instance.block.Block;
 @Slf4j
 public class App {
 
-  // final static Pos SPAWN = new Pos(2716.5f, 111.0f, 827.5f); // 1 71 3
-  public static final Pos SPAWN = new Pos(1.5f, 71.0f, 3.5f); // 1 71 3
-  final static Integer SPAWN_RADIUS = 8;
+  // public static final Pos SPAWN = new Pos(373.5f, 76.0f, 3252.5f); // Osliget
+  // SPAWN
+  // public static final Pos SPAWN = new Pos(1.5f, 71.0f, 3.5f); // DEBUG SPAWN
+  public static final Pos SPAWN = new Pos(17.5f, 65.0f, -30.5f); // PAINTING DEBUG SPAWN
+  private static final Integer SPAWN_RADIUS = 8;
+
+  public static final String WORLD_PATH = "worlds/gallery";
+  // public static final String WORLD_PATH = "worlds/main/Osliget";
 
   public static InstanceManager instanceManager;
   public static InstanceContainer instanceContainer;
@@ -31,7 +37,7 @@ public class App {
   public static void main(String[] args) {
     System.setProperty("minestom.chunk-view-distance", "16");
 
-    MinecraftServer minecraftServer = MinecraftServer.init();
+    final MinecraftServer minecraftServer = MinecraftServer.init();
     log.info("MC version: {}", MinecraftServer.VERSION_NAME);
     MinecraftServer.setBrandName("Elderwood Experiments");
 
@@ -45,8 +51,8 @@ public class App {
 
     BasicResourceMonitor.addMonitor();
 
-    // var mainWorldLoader = new AnvilLoader("worlds/main/Osliget");
-    var mainWorldLoader = new AnvilLoader("worlds/debug");
+    var mainWorldLoader = new AnvilLoader("worlds/main/Osliget");
+    // var mainWorldLoader = new AnvilEntityLoader("worlds/debug");
 
     instanceContainer.setChunkLoader(mainWorldLoader);
     instanceContainer.setTimeRate(0);
@@ -62,7 +68,7 @@ public class App {
 
     GlobalEventHandler globalEventHandler = MinecraftServer.getGlobalEventHandler();
 
-    EventHandlerRegistry.registerAllHandlers();
+    EventHandlerRegistry.registerAllHandlers(globalEventHandler);
 
     globalEventHandler.addListener(PlayerChunkUnloadEvent.class, e -> {
       try {
