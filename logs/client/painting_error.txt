@@ -1,0 +1,384 @@
+---- Minecraft Network Protocol Error Report ----
+// It's the tubes, they're clogged!
+
+Time: 2024-11-13 21:31:50
+Description: Packet handling error
+
+io.netty.handler.codec.DecoderException: Failed to decode packet 'clientbound/minecraft:set_entity_data'
+	at net.minecraft.class_9136.method_56425(class_9136.java:38)
+	at net.minecraft.class_9136.decode(class_9136.java:14)
+	at net.minecraft.class_2543.decode(class_2543.java:31)
+	at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:529)
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:468)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:290)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.flow.FlowControlHandler.dequeue(FlowControlHandler.java:202)
+	at io.netty.handler.flow.FlowControlHandler.channelRead(FlowControlHandler.java:164)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:333)
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:454)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:290)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:286)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.IndexOutOfBoundsException: readerIndex(9) + length(1) exceeds writerIndex(9): PooledSlicedByteBuf(ridx: 9, widx: 9, cap: 9/9, unwrapped: PooledUnsafeHeapByteBuf(ridx: 4498, widx: 69624, cap: 131072))
+	at io.netty.buffer.AbstractByteBuf.checkReadableBytes0(AbstractByteBuf.java:1442)
+	at io.netty.buffer.AbstractByteBuf.readByte(AbstractByteBuf.java:730)
+	at net.minecraft.class_2540.readByte(class_2540.java:1172)
+	at net.minecraft.class_8703.method_53016(class_8703.java:28)
+	at net.minecraft.class_9135$25.method_56399(class_9135.java:114)
+	at net.minecraft.class_9135$25.decode(class_9135.java:111)
+	at net.minecraft.class_9139$13.decode(class_9139.java:171)
+	at net.minecraft.class_9135$17.method_58012(class_9135.java:512)
+	at net.minecraft.class_9135$17.decode(class_9135.java:499)
+	at net.minecraft.class_2945$class_7834.method_46363(class_2945.java:158)
+	at net.minecraft.class_2945$class_7834.method_46362(class_2945.java:154)
+	at net.minecraft.class_2739.method_46616(class_2739.java:36)
+	at net.minecraft.class_2739.<init>(class_2739.java:20)
+	at net.minecraft.class_9139$6.decode(class_9139.java:37)
+	at net.minecraft.class_9139$9.method_56441(class_9139.java:91)
+	at net.minecraft.class_9139$9.decode(class_9139.java:87)
+	at net.minecraft.class_9136.method_56425(class_9136.java:36)
+	... 44 more
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Netty Client IO #16
+Stacktrace:
+	at net.minecraft.class_2547.method_55622(class_2547.java:33)
+
+-- Connection --
+Details:
+	Protocol: play
+	Flow: CLIENTBOUND
+	Server type: OTHER
+	Server brand: Elderwood Experiments
+Stacktrace:
+	at net.minecraft.class_2547.method_55622(class_2547.java:33)
+	at net.minecraft.class_2600.method_59803(class_2600.java:62)
+	at net.minecraft.class_8673.method_60882(class_8673.java:136)
+	at net.minecraft.class_8673.method_60881(class_8673.java:127)
+	at net.minecraft.class_2535.exceptionCaught(class_2535.java:161)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:346)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:325)
+	at io.netty.channel.AbstractChannelHandlerContext.fireExceptionCaught(AbstractChannelHandlerContext.java:317)
+	at io.netty.channel.ChannelInboundHandlerAdapter.exceptionCaught(ChannelInboundHandlerAdapter.java:143)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:346)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:447)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.flow.FlowControlHandler.dequeue(FlowControlHandler.java:202)
+	at io.netty.handler.flow.FlowControlHandler.channelRead(FlowControlHandler.java:164)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:333)
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:454)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:290)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:286)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.21
+	Minecraft Version ID: 1.21
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 21.0.3, Eclipse Adoptium
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Eclipse Adoptium
+	Memory: 6381580736 bytes (6085 MiB) / 17196646400 bytes (16400 MiB) up to 18874368000 bytes (18000 MiB)
+	CPUs: 12
+	Processor Vendor: AuthenticAMD
+	Processor Name: AMD Ryzen 5 5600 6-Core Processor
+	Identifier: AuthenticAMD Family 25 Model 33 Stepping 2
+	Microarchitecture: Zen 3
+	Frequency (GHz): 3.50
+	Number of physical packages: 1
+	Number of physical CPUs: 6
+	Number of logical CPUs: 12
+	Graphics card #0 name: NVIDIA GeForce GTX 1070
+	Graphics card #0 vendor: NVIDIA
+	Graphics card #0 VRAM (MiB): 8192.00
+	Graphics card #0 deviceId: VideoController1
+	Graphics card #0 versionInfo: 32.0.15.6094
+	Memory slot #0 capacity (MiB): 16384.00
+	Memory slot #0 clockSpeed (GHz): 3.60
+	Memory slot #0 type: DDR4
+	Memory slot #1 capacity (MiB): 16384.00
+	Memory slot #1 clockSpeed (GHz): 3.60
+	Memory slot #1 type: DDR4
+	Virtual memory max (MiB): 55430.54
+	Virtual memory used (MiB): 49924.64
+	Swap memory total (MiB): 22753.80
+	Swap memory used (MiB): 2728.07
+	Space in storage for jna.tmpdir (MiB): <path not set>
+	Space in storage for org.lwjgl.system.SharedLibraryExtractPath (MiB): <path not set>
+	Space in storage for io.netty.native.workdir (MiB): <path not set>
+	Space in storage for java.io.tmpdir (MiB): available: 45880.59, total: 204245.05
+	Space in storage for workdir (MiB): available: 130230.81, total: 228919.00
+	JVM Flags: 40 total; -XX:+UnlockExperimentalVMOptions -XX:+UnlockDiagnosticVMOptions -XX:+AlwaysActAsServerClassMachine -XX:+AlwaysPreTouch -XX:+DisableExplicitGC -XX:+UseNUMA -XX:NmethodSweepActivity=1 -XX:ReservedCodeCacheSize=400M -XX:NonNMethodCodeHeapSize=12M -XX:ProfiledCodeHeapSize=194M -XX:NonProfiledCodeHeapSize=194M -XX:-DontCompileHugeMethods -XX:MaxNodeLimit=240000 -XX:NodeLimitFudgeFactor=8000 -XX:+UseVectorCmov -XX:+PerfDisableSharedMem -XX:+UseFastUnorderedTimeStamps -XX:+UseCriticalJavaThreadPriority -XX:ThreadPriorityPolicy=1 -XX:AllocatePrefetchStyle=3 -XX:+UseG1GC -XX:MaxGCPauseMillis=37 -XX:+PerfDisableSharedMem -XX:G1HeapRegionSize=16M -XX:G1NewSizePercent=23 -XX:G1ReservePercent=20 -XX:SurvivorRatio=32 -XX:G1MixedGCCountTarget=3 -XX:G1HeapWastePercent=20 -XX:InitiatingHeapOccupancyPercent=10 -XX:G1RSetUpdatingPauseTimePercent=0 -XX:MaxTenuringThreshold=1 -XX:G1SATBBufferEnqueueingThresholdPercent=30 -XX:G1ConcMarkStepDurationMillis=5.0 -XX:G1ConcRSHotCardLimit=16 -XX:G1ConcRefinementServiceIntervalMillis=150 -XX:GCTimeRatio=99 -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump -Xms4000m -Xmx18000m
+	Fabric Mods:
+		architectury: Architectury 13.0.4
+		axiom: Axiom 4.2.0
+			com_moulberry_axiomclientapi_axiomclientapi_: axiomclientapi 1.0.0
+			com_moulberry_mixinconstraints: mixinconstraints 1.0.1
+		betterf3: BetterF3 11.0.1
+		bettergrass: FabricBetterGrass 1.0.19+1.21
+		blockhighlight: Custom Block Highlight 2.5
+		bobby: Bobby 5.2.4+mc1.21
+			com_typesafe_config: config 1.4.2
+			fabric-api-base: Fabric API Base 0.4.42+6573ed8c6a
+			fabric-command-api-v2: Fabric Command API (v2) 2.2.28+6ced4dd96a
+			io_leangen_geantyref_geantyref: geantyref 1.3.13
+			org_spongepowered_configurate-core: configurate-core 4.1.2
+			org_spongepowered_configurate-hocon: configurate-hocon 4.1.2
+		c2me: Concurrent Chunk Management Engine 0.2.0+alpha.11.109+1.21
+			c2me-base: Concurrent Chunk Management Engine (Base) 0.2.0+alpha.11.109+1.21
+			c2me-client-uncapvd: Concurrent Chunk Management Engine (Client/Uncap View Distance) 0.2.0+alpha.11.109+1.21
+			c2me-fixes-chunkio-threading-issues: Concurrent Chunk Management Engine (Fixes/Chunk IO/Threading Issues) 0.2.0+alpha.11.109+1.21
+			c2me-fixes-general-threading-issues: Concurrent Chunk Management Engine (Fixes/General/Threading Issues) 0.2.0+alpha.11.109+1.21
+			c2me-fixes-worldgen-threading-issues: Concurrent Chunk Management Engine (Fixes/WorldGen/Threading Issues) 0.2.0+alpha.11.109+1.21
+			c2me-fixes-worldgen-vanilla-bugs: Concurrent Chunk Management Engine (Fixes/WorldGen/Vanilla Bugs) 0.2.0+alpha.11.109+1.21
+			c2me-notickvd: Concurrent Chunk Management Engine (No Tick View Distance) 0.2.0+alpha.11.109+1.21
+			c2me-opts-allocs: Concurrent Chunk Management Engine (Optimizations/Memory Allocations) 0.2.0+alpha.11.109+1.21
+			c2me-opts-chunk-access: Concurrent Chunk Management Engine (Optimizations/Chunk Access) 0.2.0+alpha.11.109+1.21
+			c2me-opts-chunkio: Concurrent Chunk Management Engine (Optimizations/Chunk IO) 0.2.0+alpha.11.109+1.21
+			c2me-opts-math: Concurrent Chunk Management Engine (Optimizations/Math) 0.2.0+alpha.11.109+1.21
+			c2me-opts-scheduling: Concurrent Chunk Management Engine (Optimizations/Scheduling) 0.2.0+alpha.11.109+1.21
+			c2me-opts-worldgen-general: Concurrent Chunk Management Engine (Optimizations/General WorldGen) 0.2.0+alpha.11.109+1.21
+			c2me-opts-worldgen-vanilla: Concurrent Chunk Management Engine (Optimizations/Vanilla WorldGen) 0.2.0+alpha.11.109+1.21
+			c2me-rewrites-chunk-serializer: Concurrent Chunk Management Engine (Rewrites/Chunk Serializer) 0.2.0+alpha.11.109+1.21
+			c2me-rewrites-chunkio: Concurrent Chunk Management Engine (Rewrites/Chunk IO) 0.2.0+alpha.11.109+1.21
+			c2me-server-utils: Concurrent Chunk Management Engine (Server Utils) 0.2.0+alpha.11.109+1.21
+			c2me-threading-chunkio: Concurrent Chunk Management Engine (Threading/WorldGen) 0.2.0+alpha.11.109+1.21
+			c2me-threading-lighting: Concurrent Chunk Management Engine (Threading/Lighting) 0.2.0+alpha.11.109+1.21
+			c2me-threading-worldgen: Concurrent Chunk Management Engine (Threading/WorldGen) 0.2.0+alpha.11.109+1.21
+			com_ibm_async_asyncutil: asyncutil 0.1.0
+			net_objecthunter_exp4j: exp4j 0.4.8
+			org_threadly_threadly: threadly 7.0
+		camerautils: Camera Utils 1.21.1-1.0.16
+			fabric-key-binding-api-v1: Fabric Key Binding API (v1) 1.0.47+0af3f5a76a
+			fabric-lifecycle-events-v1: Fabric Lifecycle Events (v1) 2.3.12+6c1df3606a
+			fabric-resource-loader-v0: Fabric Resource Loader (v0) 1.3.0+565991296a
+		chunksfadein: Chunks Fade In 1.0.2-1.21
+			com_moandjiezana_toml_toml4j: toml4j 0.7.2
+			crowdin-translate: CrowdinTranslate 1.0.0
+		cloth-config: Cloth Config v15 15.0.127
+			cloth-basic-math: cloth-basic-math 0.6.1
+		collective: Collective 7.84
+		controlling: Controlling 18.0.1
+		cullleaves: Cull Leaves 3.4.0
+			midnightlib: MidnightLib 1.5.7
+		cyclepaintings: Cycle Paintings 3.5
+		debugify: Debugify 1.21+1.0
+		distanthorizons: Distant Horizons 2.2.1-a
+			fabric-screen-api-v1: Fabric Screen API (v1) 2.0.24+b559734490
+		dynamic_fps: Dynamic FPS 3.6.0
+			net_lostluma_battery: battery 1.0.1
+		enhancedblockentities: Enhanced Block Entities 0.10.1+1.21
+		entity-view-distance: Entity View Distance 1.3.0+1.21
+			fabric-permissions-api-v0: fabric-permissions-api 0.1-SNAPSHOT
+		entityculling: EntityCulling 1.7.0
+		fabric-api: Fabric API 0.102.0+1.21
+			fabric-api-lookup-api-v1: Fabric API Lookup API (v1) 1.6.68+b5597344d1
+			fabric-biome-api-v1: Fabric Biome API (v1) 13.0.29+5bd9f1bcd1
+			fabric-block-api-v1: Fabric Block API (v1) 1.0.22+0af3f5a7d1
+			fabric-block-view-api-v2: Fabric BlockView API (v2) 1.0.10+6573ed8cd1
+			fabric-blockrenderlayer-v1: Fabric BlockRenderLayer Registration (v1) 1.1.52+0af3f5a7d1
+			fabric-client-tags-api-v1: Fabric Client Tags 1.1.15+6573ed8cd1
+			fabric-command-api-v1: Fabric Command API (v1) 1.2.49+f71b366fd1
+			fabric-commands-v0: Fabric Commands (v0) 0.2.66+df3654b3d1
+			fabric-content-registries-v0: Fabric Content Registries (v0) 8.0.16+b5597344d1
+			fabric-convention-tags-v1: Fabric Convention Tags 2.0.19+7f945d5bd1
+			fabric-convention-tags-v2: Fabric Convention Tags (v2) 2.5.0+c5e2b5c6d1
+			fabric-crash-report-info-v1: Fabric Crash Report Info (v1) 0.2.29+0af3f5a7d1
+			fabric-data-attachment-api-v1: Fabric Data Attachment API (v1) 1.1.27+6a6dfa19d1
+			fabric-data-generation-api-v1: Fabric Data Generation API (v1) 20.2.16+16c4ae25d1
+			fabric-dimensions-v1: Fabric Dimensions API (v1) 4.0.0+6fc22b99d1
+			fabric-entity-events-v1: Fabric Entity Events (v1) 1.6.12+6fc22b99d1
+			fabric-events-interaction-v0: Fabric Events Interaction (v0) 0.7.12+ba9dae06d1
+			fabric-game-rule-api-v1: Fabric Game Rule API (v1) 1.0.53+6ced4dd9d1
+			fabric-item-api-v1: Fabric Item API (v1) 11.0.0+afdfc921d1
+			fabric-item-group-api-v1: Fabric Item Group API (v1) 4.1.4+78017270d1
+			fabric-keybindings-v0: Fabric Key Bindings (v0) 0.2.45+df3654b3d1
+			fabric-loot-api-v2: Fabric Loot API (v2) 3.0.14+3f89f5a5d1
+			fabric-loot-api-v3: Fabric Loot API (v3) 1.0.2+3f89f5a5d1
+			fabric-message-api-v1: Fabric Message API (v1) 6.0.13+6573ed8cd1
+			fabric-model-loading-api-v1: Fabric Model Loading API (v1) 2.0.0+fe474d6bd1
+			fabric-networking-api-v1: Fabric Networking API (v1) 4.2.2+60c3209bd1
+			fabric-object-builder-api-v1: Fabric Object Builder API (v1) 15.2.0+a551f7a4d1
+			fabric-particles-v1: Fabric Particles (v1) 4.0.2+6573ed8cd1
+			fabric-recipe-api-v1: Fabric Recipe API (v1) 5.0.12+65089712d1
+			fabric-registry-sync-v0: Fabric Registry Sync (v0) 5.1.2+60c3209bd1
+			fabric-renderer-api-v1: Fabric Renderer API (v1) 3.4.0+c705a49cd1
+			fabric-renderer-indigo: Fabric Renderer - Indigo 1.7.0+c705a49cd1
+			fabric-renderer-registries-v1: Fabric Renderer Registries (v1) 3.2.68+df3654b3d1
+			fabric-rendering-data-attachment-v1: Fabric Rendering Data Attachment (v1) 0.3.48+73761d2ed1
+			fabric-rendering-fluids-v1: Fabric Rendering Fluids (v1) 3.1.6+b5597344d1
+			fabric-rendering-v0: Fabric Rendering (v0) 1.1.71+df3654b3d1
+			fabric-rendering-v1: Fabric Rendering (v1) 5.0.5+df16efd0d1
+			fabric-resource-conditions-api-v1: Fabric Resource Conditions API (v1) 4.3.0+8dc279b1d1
+			fabric-screen-handler-api-v1: Fabric Screen Handler API (v1) 1.3.86+b5597344d1
+			fabric-sound-api-v1: Fabric Sound API (v1) 1.0.23+6573ed8cd1
+			fabric-transfer-api-v1: Fabric Transfer API (v1) 5.1.16+3dccd343d1
+			fabric-transitive-access-wideners-v1: Fabric Transitive Access Wideners (v1) 6.1.0+176f9036d1
+		fabric-language-kotlin: Fabric Language Kotlin 1.11.0+kotlin.2.0.0
+			org_jetbrains_kotlin_kotlin-reflect: kotlin-reflect 2.0.0
+			org_jetbrains_kotlin_kotlin-stdlib: kotlin-stdlib 2.0.0
+			org_jetbrains_kotlin_kotlin-stdlib-jdk7: kotlin-stdlib-jdk7 2.0.0
+			org_jetbrains_kotlin_kotlin-stdlib-jdk8: kotlin-stdlib-jdk8 2.0.0
+			org_jetbrains_kotlinx_atomicfu-jvm: atomicfu-jvm 0.24.0
+			org_jetbrains_kotlinx_kotlinx-coroutines-core-jvm: kotlinx-coroutines-core-jvm 1.8.1
+			org_jetbrains_kotlinx_kotlinx-coroutines-jdk8: kotlinx-coroutines-jdk8 1.8.1
+			org_jetbrains_kotlinx_kotlinx-datetime-jvm: kotlinx-datetime-jvm 0.6.0
+			org_jetbrains_kotlinx_kotlinx-serialization-cbor-jvm: kotlinx-serialization-cbor-jvm 1.6.3
+			org_jetbrains_kotlinx_kotlinx-serialization-core-jvm: kotlinx-serialization-core-jvm 1.6.3
+			org_jetbrains_kotlinx_kotlinx-serialization-json-jvm: kotlinx-serialization-json-jvm 1.6.3
+		fabricloader: Fabric Loader 0.16.0
+			mixinextras: MixinExtras 0.4.0
+		fabrishot: Fabrishot 1.14.0
+		fastipping: Fast IP Ping 1.0.3
+		ferritecore: FerriteCore 7.0.0
+		forgeconfigapiport: Forge Config API Port 21.0.8
+			com_electronwill_night-config_core: core 3.8.0
+			com_electronwill_night-config_toml: toml 3.8.0
+		freecam: Freecam (Modrinth Edition) 1.3.0-beta1+mc1.21
+		gammautils: Gamma Utils 1.9.20
+		immediatelyfast: ImmediatelyFast 1.2.18+1.21
+			net_lenni0451_reflect: Reflect 1.3.4
+		iris: Iris 1.8.0-beta.3+mc1.21.1
+			io_github_douira_glsl-transformer: glsl-transformer 2.0.1
+			org_anarres_jcpp: jcpp 1.4.14
+			org_antlr_antlr4-runtime: antlr4-runtime 4.13.1
+		isometric-renders: Isometric Renders 0.4.7+1.21
+			worldmesher: Worldmesher 0.4.6+1.21
+		jamlib: JamLib 1.0.9+1.21
+			blue_endless_jankson: jankson 1.2.3
+		java: OpenJDK 64-Bit Server VM 21
+		krypton: Krypton 0.2.8
+			com_velocitypowered_velocity-native: velocity-native 3.3.0-SNAPSHOT
+		libjf: LibJF 3.16.0
+			libjf-base: LibJF Base 3.16.0
+			libjf-config-commands: LibJF Config Commands 3.16.0
+			libjf-config-core-v2: LibJF Config 3.16.0
+			libjf-config-network-v0: LibJF Config: Network 3.16.0
+			libjf-config-ui-tiny: LibJF Config UI: Tiny 3.16.0
+			libjf-data-manipulation-v0: LibJF Data Manipulation 3.16.0
+			libjf-data-v0: LibJF Data 3.16.0
+			libjf-mainhttp-v0: LibJF MainHTTP 3.16.0
+			libjf-translate-v1: LibJF Translate 3.16.0
+			libjf-unsafe-v0: LibJF Unsafe 3.16.0
+			libjf-web-v1: LibJF Web 3.16.0
+		lithium: Lithium 0.12.7
+		macrokeybinds: Macro Keybinds 1.3.1
+		minecraft: Minecraft 1.21
+		modelfix: Model Gap Fix 1.21-1.6
+		modernfix: ModernFix 5.18.8+mc1.21
+		modmenu: Mod Menu 11.0.1
+		morechathistory: More Chat History 1.3.1
+		moreculling: More Culling 0.26.0
+			com_github_fallen-breath_conditional-mixin: conditional-mixin v0.6.2
+			mixinsquared: MixinSquared 0.1.1
+		mousetweaks: Mouse Tweaks 2.26
+		mr_dynamic_torches: Dynamic Torches 4
+		nccl: NoCommandChatLimit 0.0.1
+		orthocamera: OrthoCamera 0.1.8+1.21
+		owo: oωo 0.12.10+1.21
+			io_wispforest_endec: endec 0.1.0
+			io_wispforest_endec_gson: gson 0.1.0
+			io_wispforest_endec_jankson: jankson 0.1.0
+			io_wispforest_endec_netty: netty 0.1.0
+		pickblockpro: Pick Block Pro 1.10.30
+		placeholder-api: Placeholder API 2.4.1+1.21
+		puzzleslib: Puzzles Lib 21.0.22
+		realmsfix: Realms Button Remover 2.0.5
+		reeses-sodium-options: Reese's Sodium Options 1.8.0-beta.2+mc1.21.1
+		resourcify: Resourcify 1.4.0
+			universalcraft: UniversalCraft 342
+		roughlyenoughitems: Roughly Enough Items 16.0.729
+			error_notifier: Error Notifier 1.0.9
+		scalablelux: ScalableLux 0.1.0+fabric.26c6e72
+		screencopy: Screencopy 1.2.2-fabric
+			com_github_ramanrajarathinam_native-utils: native-utils 1.0.0
+			io_github_imurx_arboard: arboard 1.1.1
+		searchables: Searchables 1.0.1
+		slyde: Slyde 1.7.5
+		sodium: Sodium 0.6.0-beta.1+mc1.21
+		sodium-extra: Sodium Extra 0.6.0-beta.1+mc1.21.1
+			com_lodborg_interval-tree: interval-tree 1.0.0
+		stutterfix: StutterFix mc1.21-0.2.2
+		toomanybinds: Too Many Binds 0.3.4+1.20.2
+		ukulib: ukulib 1.3.0+1.21
+		waveycapes: WaveyCapes 1.4.8
+		worldeditcui: WorldEditCUI 1.21+01-SNAPSHOT
+		xaerominimap: Xaero's Minimap 24.2.1
+		xaeroworldmap: Xaero's World Map 1.38.8
+		yet_another_config_lib_v3: YetAnotherConfigLib 3.5.0+1.21-fabric
+			com_twelvemonkeys_common_common-image: common-image 3.10.0
+			com_twelvemonkeys_common_common-io: common-io 3.10.0
+			com_twelvemonkeys_common_common-lang: common-lang 3.10.0
+			com_twelvemonkeys_imageio_imageio-core: imageio-core 3.10.0
+			com_twelvemonkeys_imageio_imageio-metadata: imageio-metadata 3.10.0
+			com_twelvemonkeys_imageio_imageio-webp: imageio-webp 3.10.0
+			org_quiltmc_parsers_gson: gson 0.2.1
+			org_quiltmc_parsers_json: json 0.2.1
+		zoomify: Zoomify 2.14.0+1.21
+			com_akuleshov7_ktoml-core-jvm: ktoml-core-jvm 0.5.1
+	Loaded Shaderpack: (off)
