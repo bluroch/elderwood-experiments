@@ -6,6 +6,7 @@ import java.nio.file.Path;
 import java.util.List;
 
 import elderwood.experiments.App;
+import elderwood.experiments.entity.loader.ArmorStandLoader;
 import elderwood.experiments.entity.loader.ItemFrameLoader;
 import elderwood.experiments.entity.loader.PaintingLoader;
 import lombok.extern.slf4j.Slf4j;
@@ -60,13 +61,16 @@ public class EntityLoader {
             case "minecraft:glow_item_frame":
               ItemFrameLoader.initGlowingItemFrame(binaryTag, instance);
               break;
+            case "minecraft:armor_stand":
+              ArmorStandLoader.initArmorStand(binaryTag, instance);
+              break;
             default:
               break;
           }
         });
       }
     } catch (IOException e) {
-
+      log.error("Couldn't read region file\n", e);
     }
   }
 }
