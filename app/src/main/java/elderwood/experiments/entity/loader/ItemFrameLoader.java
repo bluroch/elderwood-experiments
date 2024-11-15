@@ -90,10 +90,6 @@ public class ItemFrameLoader {
 
     itemFrame.setInstance(world, pos);
 
-    log.info(data.toString());
-
-    // itemFrame.setGlowing(true);
-
     return itemFrame;
   }
 
@@ -132,10 +128,6 @@ public class ItemFrameLoader {
         rotationList[1]);
 
     glowingItemFrame.setInstance(world, pos);
-
-    // glowingItemFrame.setGlowing(true);
-
-    log.info(data.toString());
 
     return glowingItemFrame;
   }
